@@ -14,5 +14,12 @@ I know there is not much ingenuity in there. Let me see if I can get more creati
 I may in future add some of my own code or unit testing to the same in future. 
 I will update the changes here as and when it happens.
 
+#### Changes added
+
+* Changed property files from application.properties to application.yaml
+
+###### Section 3 : Hibernate/JPA
+
+* Used a new schema products_tracker instead of the student_tracker from the course. It includes a new datatype decimal for price which is new from the course.
 
 The wiki or rather notes gathered are at https://github.com/christyjohn/SpringBoot_Hibernate_Udemy/wiki/Notes
