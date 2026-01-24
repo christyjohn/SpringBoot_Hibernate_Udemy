@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CourseController {
 
+    // use constructor injection when you have required dependencies
+    // recommended by the Spring Development team
+	
+	// use setter injection when you have optional dependencies
+
     // define a private field for the dependency
     private Tutor theTutor;
 
