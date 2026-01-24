@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class CruddemoApplication {
 
@@ -17,8 +19,10 @@ public class CruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(ProductDAO productDAO) {
 		return runner -> {
-			createProduct(productDAO);
-			createMultipleProducts(productDAO);
+			//createProduct(productDAO);
+			//createMultipleProducts(productDAO);
+			//readProduct(productDAO);
+			queryForProducts(productDAO);
 		};
 	}
 
@@ -50,5 +54,36 @@ public class CruddemoApplication {
 		productDAO.save(product1);
 		productDAO.save(product2);
 		productDAO.save(product3);
+	}
+
+	private void readProduct(ProductDAO productDAO) {
+		// create  a product object
+		System.out.println("Creating new Product object ...");
+		Product product = new Product("Samsung Galaxy Z Fold7", "sgzip012re", 1689.66,
+				"Samsung Galaxy Z Fold7 SM-F966U 1 TB Flexible Folding Screen");
+
+		// save the product
+		System.out.println("Saving the product ...");
+		productDAO.save(product);
+
+		// display id of the saved product
+		int theId = product.getId();
+		System.out.println("Saved product. Generated id: " + theId);
+
+		// retrieve product based on the id: primary key
+		System.out.println("Retrieving product with id: " + theId);
+		Product myProduct = productDAO.findById(theId);
+
+		// display student
+		System.out.println("Found the product: " + myProduct);
+	}
+
+	private void queryForProducts(ProductDAO productDAO) {
+		// get a list of products
+		List<Product> prodcuts = productDAO.findAll();
+
+		// display the list of products
+		for(Product product : prodcuts)
+			System.out.println(product);
 	}
 }
