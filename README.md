@@ -22,4 +22,6 @@ I will update the changes here as and when it happens.
 
 * Used a new schema products_tracker instead of the student_tracker from the course. It includes a new datatype decimal for price which is new from the course.
 
+* Added Lombok annotation support
+
 The wiki or rather notes gathered are at https://github.com/christyjohn/SpringBoot_Hibernate_Udemy/wiki/Notes
