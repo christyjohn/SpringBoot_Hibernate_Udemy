@@ -12,7 +12,7 @@ CREATE TABLE `products` (
   `product_name`varchar(45) DEFAULT NULL,
   `sku` VARCHAR(100) DEFAULT NULL,
   `price` DECIMAL(10, 2) DEFAULT NULL,
-  `product_description` varchar(45) DEFAULT NULL,
+  `product_description` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
