@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: my-spring-learning-app
+
+# Use wildcard "*" to expose all endpoints
+# Can also expose individual endpoints with a comma-delimited lit
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+        #include: ["*"]
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: My Spring Learning App
+    description: Learning Chad Darby's course from Udemy
+    version: 1.0.0
