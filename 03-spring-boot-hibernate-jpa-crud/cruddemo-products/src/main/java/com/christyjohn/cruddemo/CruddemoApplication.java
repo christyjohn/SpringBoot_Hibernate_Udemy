@@ -22,7 +22,9 @@ public class CruddemoApplication {
 			//createProduct(productDAO);
 			//createMultipleProducts(productDAO);
 			//readProduct(productDAO);
-			queryForProducts(productDAO);
+			//queryForProducts(productDAO);
+			queryForProductBySKU(productDAO, "sfeip03434");
+			queryForStudentsByProductName(productDAO, "iPhone 15 Pro Max");
 		};
 	}
 
@@ -80,10 +82,25 @@ public class CruddemoApplication {
 
 	private void queryForProducts(ProductDAO productDAO) {
 		// get a list of products
-		List<Product> prodcuts = productDAO.findAll();
+		List<Product> products = productDAO.findAll();
 
 		// display the list of products
-		for(Product product : prodcuts)
+		for(Product product : products)
+			System.out.println(product);
+	}
+
+	private void queryForProductBySKU(ProductDAO productDAO, String sku) {
+		Product product = productDAO.findBySKU(sku);
+
+		System.out.println(product);
+	}
+
+	private void queryForStudentsByProductName(ProductDAO productDAO, String prodName) {
+		// get a list of products
+		List<Product> products = productDAO.findByProductName(prodName);
+
+		// display the list of products
+		for(Product product : products)
 			System.out.println(product);
 	}
 }

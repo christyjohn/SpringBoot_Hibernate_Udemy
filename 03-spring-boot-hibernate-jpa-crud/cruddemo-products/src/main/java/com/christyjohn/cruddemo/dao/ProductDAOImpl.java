@@ -37,4 +37,30 @@ public class ProductDAOImpl implements ProductDAO {
         // return query results
         return theQuery.getResultList();
     }
+
+    @Override
+    public Product findBySKU(String sku) {
+        // create query
+        TypedQuery<Product> theQuery = entityManager.createQuery(
+                "FROM Product WHERE sku=:theSKU", Product.class);
+
+        // set query parameters
+        theQuery.setParameter("theSKU", sku);
+
+        // return query results
+        return theQuery.getSingleResult();
+    }
+
+    @Override
+    public List<Product> findByProductName(String productName) {
+        // create query
+        TypedQuery<Product> theQuery = entityManager.createQuery(
+                "FROM Product WHERE productName=:theproductName", Product.class);
+
+        // set query parameters
+        theQuery.setParameter("theproductName", productName);
+
+        // return query results
+        return theQuery.getResultList();
+    }
 }

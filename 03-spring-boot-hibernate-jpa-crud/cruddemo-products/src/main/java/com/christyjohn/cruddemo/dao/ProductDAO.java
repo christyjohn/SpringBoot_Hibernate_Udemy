@@ -10,4 +10,8 @@ public interface ProductDAO {
     Product findById(Integer id);
 
     List<Product> findAll();
+
+    Product findBySKU(String sku);
+
+    List<Product> findByProductName(String productName);
 }
