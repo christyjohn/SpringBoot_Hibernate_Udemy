@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: my-spring-learning-app
+  security:
+    user:
+      name: christy
+      password: tiger
+
+# Use wildcard "*" to expose all endpoints
+# Can also expose individual endpoints with a comma-delimited list
+# Can also exclude individual endpoints with a comma-delimited list
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+        # include: ["*"]
+        # exclude: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: My Spring Learning App
+    description: Learning Chad Darby's course from Udemy
+    version: 1.0.0
+
+# Add custom properties
+tutor:
+  name: Chad Darby
+course:
+  name: Spring Boot 4, Spring 7 & Hibernate for Beginners
+student:
+  name: Christy John
