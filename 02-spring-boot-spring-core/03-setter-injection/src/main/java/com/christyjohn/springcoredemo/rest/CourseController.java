@@ -14,6 +14,11 @@ public class CourseController {
     // recommended by the Spring Development team
 
     // define a private field for the dependency
+
+    // can use field ijection by autowiring the field and
+    // removing constructors and setters. Not preferred anymore
+
+    // @Autowired
     private Tutor theTutor;
 
     @Autowired
