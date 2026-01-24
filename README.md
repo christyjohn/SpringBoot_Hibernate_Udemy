@@ -14,3 +14,7 @@ I know there is not much ingenuity in there. Let me see if I can get more creati
 I may in future add some of my own code or unit testing to the same in future. 
 I will update the changes here as and when it happens.
 
+
+## NOTES
+## Qualifiers
+If Class contains consecutive Capital letters, we need to add @Qualifier at both class level and at the Controller level.
