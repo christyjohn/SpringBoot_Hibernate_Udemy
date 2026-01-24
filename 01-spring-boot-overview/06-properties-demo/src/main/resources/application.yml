@@ -6,6 +6,13 @@ spring:
       name: christy
       password: tiger
 
+server:
+  port: 9090
+  servlet:
+    context-path: /my-course-app
+    session:
+      timeout: 15m
+
 # Use wildcard "*" to expose all endpoints
 # Can also expose individual endpoints with a comma-delimited list
 # Can also exclude individual endpoints with a comma-delimited list
