@@ -19,13 +19,17 @@ public class CruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(ProductDAO productDAO) {
 		return runner -> {
+			// uncomment each operation and comment others as you run each operation
+			
 			//createProduct(productDAO);
 			//createMultipleProducts(productDAO);
 			//readProduct(productDAO);
 			//queryForProducts(productDAO);
 			//queryForProductBySKU(productDAO, "sfeip03434");
 			//queryForStudentsByProductName(productDAO, "iPhone 15 Pro Max");
-			updateProduct(productDAO, 5);
+			//updateProduct(productDAO, 5);
+			deleteProduct(productDAO, 5);
+			deleteAllProducts(productDAO);
 		};
 	}
 
@@ -118,5 +122,16 @@ public class CruddemoApplication {
 
 		// display the updated product
 		System.out.println("Updated product: " + product);
+	}
+
+	private void deleteProduct(ProductDAO productDAO, int id) {
+		System.out.println("Deleting product with id: " + id);
+		productDAO.delete(id);
+	}
+
+	private void deleteAllProducts(ProductDAO productDAO) {
+		System.out.println("Deleting all products...");
+		int numRowsDeleted = productDAO.deleteAll();
+		System.out.println("Deleted all " + numRowsDeleted + " products deleted.");
 	}
 }

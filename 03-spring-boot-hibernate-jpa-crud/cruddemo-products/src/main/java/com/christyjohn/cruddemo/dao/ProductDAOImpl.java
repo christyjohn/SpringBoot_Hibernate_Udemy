@@ -69,4 +69,21 @@ public class ProductDAOImpl implements ProductDAO {
     public void update(Product product) {
         entityManager.merge(product);
     }
+
+    @Override
+    @Transactional
+    public void delete(Integer id) {
+        // retrieve the product
+        Product product = entityManager.find(Product.class, id);
+
+        // delete the product
+        entityManager.remove(product);
+    }
+
+    @Override
+    @Transactional
+    public int deleteAll() {
+        int numRowsDeleted = entityManager.createQuery("DELETE FROM Product").executeUpdate();
+        return numRowsDeleted;
+    }
 }
