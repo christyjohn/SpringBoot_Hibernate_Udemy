@@ -23,8 +23,9 @@ public class CruddemoApplication {
 			//createMultipleProducts(productDAO);
 			//readProduct(productDAO);
 			//queryForProducts(productDAO);
-			queryForProductBySKU(productDAO, "sfeip03434");
-			queryForStudentsByProductName(productDAO, "iPhone 15 Pro Max");
+			//queryForProductBySKU(productDAO, "sfeip03434");
+			//queryForStudentsByProductName(productDAO, "iPhone 15 Pro Max");
+			updateProduct(productDAO, 5);
 		};
 	}
 
@@ -102,5 +103,20 @@ public class CruddemoApplication {
 		// display the list of products
 		for(Product product : products)
 			System.out.println(product);
+	}
+
+	private void updateProduct(ProductDAO productDAO, int id) {
+		System.out.println("Getting product with id: " + id);
+		Product product = productDAO.findById(id);
+
+		System.out.println("Updating product...");
+		product.setProductName("A new Stylish Nothing Phone");
+		product.setProductDescription("Nothing Phone (3), White (12GB, 256GB)");
+
+		// update the product
+		productDAO.update(product);
+
+		// display the updated product
+		System.out.println("Updated product: " + product);
 	}
 }

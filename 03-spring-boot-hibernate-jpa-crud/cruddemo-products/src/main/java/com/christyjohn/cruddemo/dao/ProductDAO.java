@@ -14,4 +14,6 @@ public interface ProductDAO {
     Product findBySKU(String sku);
 
     List<Product> findByProductName(String productName);
+
+    void update(Product product);
 }

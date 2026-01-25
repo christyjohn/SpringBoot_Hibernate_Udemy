@@ -63,4 +63,10 @@ public class ProductDAOImpl implements ProductDAO {
         // return query results
         return theQuery.getResultList();
     }
+
+    @Override
+    @Transactional
+    public void update(Product product) {
+        entityManager.merge(product);
+    }
 }
