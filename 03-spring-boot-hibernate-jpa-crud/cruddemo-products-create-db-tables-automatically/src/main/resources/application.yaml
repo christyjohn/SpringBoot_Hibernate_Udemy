@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: cruddemo
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://localhost:3306/products_tracker
+    username: springstudent
+    password: springstudent
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+# make Spring's logging to only WARN and above
+# Log SQL statements and the values
+logging:
+  level:
+    root: warn
+    org:
+      hibernate:
+        SQL: debug
+        orm:
+          jdbc:
+            bind: trace

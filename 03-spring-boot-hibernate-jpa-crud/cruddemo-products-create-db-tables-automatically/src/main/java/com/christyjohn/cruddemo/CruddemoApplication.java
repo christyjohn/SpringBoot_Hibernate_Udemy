@@ -22,14 +22,14 @@ public class CruddemoApplication {
 			// uncomment each operation and comment others as you run each operation
 
 			//createProduct(productDAO);
-			//createMultipleProducts(productDAO);
+			createMultipleProducts(productDAO);
 			//readProduct(productDAO);
 			//queryForProducts(productDAO);
 			//queryForProductBySKU(productDAO, "sfeip03434");
 			//queryForStudentsByProductName(productDAO, "iPhone 15 Pro Max");
 			//updateProduct(productDAO, 5);
-			deleteProduct(productDAO, 5);
-			deleteAllProducts(productDAO);
+			//deleteProduct(productDAO, 5);
+			//deleteAllProducts(productDAO);
 		};
 	}
 
