@@ -3,6 +3,7 @@ package com.christyjohn.restcruddemo.rest;
 import com.christyjohn.restcruddemo.entity.Product;
 import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,5 +32,10 @@ public class ProductRestController {
     @GetMapping("/products")
     public List<Product> getProducts() {
         return products;
+    }
+
+    @GetMapping("/products/{productId}")
+    public Product getProduct(@PathVariable int productId) {
+        return products.get(productId);
     }
 }
