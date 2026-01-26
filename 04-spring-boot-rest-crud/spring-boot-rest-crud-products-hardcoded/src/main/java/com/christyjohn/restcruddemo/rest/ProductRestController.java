@@ -1,6 +1,7 @@
 package com.christyjohn.restcruddemo.rest;
 
 import com.christyjohn.restcruddemo.entity.Product;
+import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,10 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ProductRestController {
+    private List<Product> products = new ArrayList<>();
 
-    @GetMapping("/products")
-    public List<Product> getProducts() {
-        List<Product> products = new ArrayList<>();
+    @PostConstruct
+    public void loadData() {
         // create multiple products
         Product product1 = new Product("iPhone 15 Pro Max", "apip01234", 1689.66,
                 "Apple iPhone 15 Pro Max (256 GB) - Black Titanium");
@@ -25,7 +26,10 @@ public class ProductRestController {
         products.add(product1);
         products.add(product2);
         products.add(product3);
+    }
 
+    @GetMapping("/products")
+    public List<Product> getProducts() {
         return products;
     }
 }
