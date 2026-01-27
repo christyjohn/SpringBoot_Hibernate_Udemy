@@ -17,12 +17,11 @@ I will update the changes here as and when it happens.
 #### Changes added
 
 * Changed property files from application.properties to application.yaml
+* Added Lombok annotation support
 
 ###### Section 3 : Hibernate/JPA
 
 * Used a new schema products_tracker instead of the student_tracker from the course. It includes a new datatype decimal for price which is new from the course.
-
-* Added Lombok annotation support
 
 ###### Wction 4: REST CRUD APIs
 
