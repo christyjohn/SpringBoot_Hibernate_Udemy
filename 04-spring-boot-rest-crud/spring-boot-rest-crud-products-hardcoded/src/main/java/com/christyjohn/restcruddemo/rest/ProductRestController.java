@@ -1,11 +1,12 @@
 package com.christyjohn.restcruddemo.rest;
 
 import com.christyjohn.restcruddemo.entity.Product;
+import com.christyjohn.restcruddemo.exceptions.ProductErrorResponse;
+import com.christyjohn.restcruddemo.exceptions.ProductNotFoundException;
 import jakarta.annotation.PostConstruct;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,29 @@ public class ProductRestController {
 
     @GetMapping("/products/{productId}")
     public Product getProduct(@PathVariable int productId) {
+        if(productId >= products.size() || productId < 0) {
+            throw new ProductNotFoundException("Product Id not found: " + productId);
+        }
         return products.get(productId);
+    }
+    
+    @ExceptionHandler
+    public ResponseEntity<ProductErrorResponse> handleException(ProductNotFoundException exc) {
+        ProductErrorResponse error = new ProductErrorResponse();
+        error.setStatus(HttpStatus.NOT_FOUND.value());
+        error.setMessage(exc.getMessage());
+        error.setTimestamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ProductErrorResponse> handleException(Exception exc) {
+        ProductErrorResponse error = new ProductErrorResponse();
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.setMessage(exc.getMessage());
+        error.setTimestamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }
