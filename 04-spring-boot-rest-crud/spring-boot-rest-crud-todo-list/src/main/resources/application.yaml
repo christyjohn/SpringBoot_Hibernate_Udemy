@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: cruddemo
+  datasource:
+    url: jdbc:mysql://localhost:3306/todo_list_application
+    username: springstudent
+    password: springstudent
