@@ -1,18 +1,19 @@
 package com.christyjohn.springboot.cruddemo.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 @Entity
 @Table(name="task_list")
 @NoArgsConstructor
+@AllArgsConstructor
 @RequiredArgsConstructor
 @Data
+@Builder
 public class Task {
 
     @Id
@@ -32,7 +33,8 @@ public class Task {
     @Column(name="is_completed")
     private boolean completed;
 
-    @NonNull
     @Column(name="created_at")
-    private LocalDate cratedAt;
+    @Builder.Default
+    private LocalDate createdAt = Instant.ofEpochMilli(System.currentTimeMillis())
+            .atZone(ZoneId.systemDefault()).toLocalDate();
 }

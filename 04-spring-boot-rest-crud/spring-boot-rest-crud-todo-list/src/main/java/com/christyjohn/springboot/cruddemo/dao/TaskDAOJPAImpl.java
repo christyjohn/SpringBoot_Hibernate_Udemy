@@ -31,16 +31,19 @@ public class TaskDAOJPAImpl implements TaskDAO {
 
     @Override
     public Task findById(int id) {
-        return null;
+        Task task = entityManager.find(Task.class, id);
+        return task;
     }
 
     @Override
     public Task save(Task task) {
-        return null;
+        Task newOrUpdateTask = entityManager.merge(task);
+        return newOrUpdateTask;
     }
 
     @Override
     public void deleteById(int id) {
-
+        Task task = entityManager.find(Task.class, id);
+        entityManager.remove(task);
     }
 }
