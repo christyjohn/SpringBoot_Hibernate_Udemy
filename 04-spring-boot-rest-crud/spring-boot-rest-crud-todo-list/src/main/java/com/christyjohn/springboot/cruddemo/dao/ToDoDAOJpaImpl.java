@@ -3,18 +3,20 @@ package com.christyjohn.springboot.cruddemo.dao;
 import com.christyjohn.springboot.cruddemo.entity.ToDo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor
-public class ToDoDAOImpl implements ToDoDAO {
+public class ToDoDAOJpaImpl implements ToDoDAO {
 
-    @NonNull
     private EntityManager entityManager;
+
+    @Autowired
+    public ToDoDAOJpaImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
 
     @Override
     public List<ToDo> findAll() {
