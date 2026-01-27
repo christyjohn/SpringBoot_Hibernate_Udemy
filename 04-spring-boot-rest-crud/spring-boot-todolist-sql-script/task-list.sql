@@ -5,7 +5,7 @@ USE `task_list_application`;
 -- Table structure for table `task_list_application`
 --
 
-DROP TABLE IF EXISTS `todo_listtask_list`;
+DROP TABLE IF EXISTS `task_list`;
 
 CREATE TABLE `task_list` (
   `id` int NOT NULL AUTO_INCREMENT,
