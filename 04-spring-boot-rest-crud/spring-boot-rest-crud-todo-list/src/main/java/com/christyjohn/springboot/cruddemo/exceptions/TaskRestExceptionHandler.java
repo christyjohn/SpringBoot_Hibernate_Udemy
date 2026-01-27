@@ -19,6 +19,16 @@ public class TaskRestExceptionHandler {
     }
 
     @ExceptionHandler
+    public ResponseEntity<TaskErrorResponse> handleException(TaskNotAllowedException exc) {
+        TaskErrorResponse error = new TaskErrorResponse();
+        error.setStatus(HttpStatus.NOT_ACCEPTABLE.value());
+        error.setMessage(exc.getMessage());
+        error.setTimestamp(System.currentTimeMillis());
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_ACCEPTABLE);
+    }
+
+    @ExceptionHandler
     public ResponseEntity<TaskErrorResponse> handleException(Exception exc) {
         TaskErrorResponse error = new TaskErrorResponse();
         error.setStatus(HttpStatus.BAD_REQUEST.value());
