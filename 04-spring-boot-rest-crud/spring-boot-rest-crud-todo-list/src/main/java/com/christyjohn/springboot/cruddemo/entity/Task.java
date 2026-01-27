@@ -9,11 +9,11 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="todo_list")
+@Table(name="task_list")
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Data
-public class ToDo {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,13 +1,13 @@
-CREATE DATABASE  IF NOT EXISTS `todo_list_application`;
-USE `todo_list_application`;
+CREATE DATABASE  IF NOT EXISTS `task_list_application`;
+USE `task_list_application`;
 
 --
--- Table structure for table `todo_list_application`
+-- Table structure for table `task_list_application`
 --
 
-DROP TABLE IF EXISTS `todo_list`;
+DROP TABLE IF EXISTS `todo_listtask_list`;
 
-CREATE TABLE `todo_list` (
+CREATE TABLE `task_list` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `description` TEXT,
@@ -17,10 +17,10 @@ CREATE TABLE `todo_list` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 --
--- Data for table `todo_list`
+-- Data for table `task_list`
 --
 
-INSERT INTO `todo_list` (`title`, `description`, `is_completed`) VALUES 
+INSERT INTO `task_list` (`title`, `description`, `is_completed`) VALUES 
     ('Do Laundry', 'Do the laundry for last week.', false),
     ('Do Grocery shopping', 'Buy vegetables and grocery for next week', true),
     ('Finish Homework', 'Do the math homework and complete the Physics assignment', false),

@@ -1,7 +1,7 @@
 package com.christyjohn.springboot.cruddemo.controller;
 
-import com.christyjohn.springboot.cruddemo.entity.ToDo;
-import com.christyjohn.springboot.cruddemo.service.ToDoService;
+import com.christyjohn.springboot.cruddemo.entity.Task;
+import com.christyjohn.springboot.cruddemo.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,17 +11,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class ToDoListController {
+public class TaskListController {
 
-    private ToDoService toDoService;
+    private TaskService taskService;
 
     @Autowired
-    public ToDoListController(ToDoService toDoService) {
-        this.toDoService = toDoService;
+    public TaskListController(TaskService toDoService) {
+        this.taskService = toDoService;
     }
 
-    @GetMapping("/todolist")
-    public List<ToDo> findAll() {
-        return toDoService.findAll();
+    @GetMapping("/tasklist")
+    public List<Task> findAll() {
+        return taskService.findAll();
     }
 }
