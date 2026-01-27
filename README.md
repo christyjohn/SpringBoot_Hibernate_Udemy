@@ -26,6 +26,6 @@ I will update the changes here as and when it happens.
 
 ###### Wction 4: REST CRUD APIs
 
-* instead of the employee directory appliation, created a To Do List application.
+* Instead of the employee directory appliation, created a To Do List application.
 
 The wiki or rather notes gathered are at https://github.com/christyjohn/SpringBoot_Hibernate_Udemy/wiki/Notes
