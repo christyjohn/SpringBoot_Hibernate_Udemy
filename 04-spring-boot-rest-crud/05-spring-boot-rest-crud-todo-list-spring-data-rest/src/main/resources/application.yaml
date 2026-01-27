@@ -8,3 +8,4 @@ spring:
   data:
     rest:
       base-path: /api
+      default-page-size: 20
