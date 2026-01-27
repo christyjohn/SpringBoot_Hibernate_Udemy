@@ -1,6 +1,7 @@
 package com.christyjohn.springboot.cruddemo.controller;
 
 import com.christyjohn.springboot.cruddemo.entity.Task;
+import com.christyjohn.springboot.cruddemo.exceptions.TaskNotFoundException;
 import com.christyjohn.springboot.cruddemo.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class TaskListController {
         Task task = taskService.findById(taskId);
 
         if(task  == null) {
-            throw new RuntimeException("Task with id: " + taskId + " not found.");
+            throw new TaskNotFoundException("Task with id: " + taskId + " not found.");
         }
 
         return task;
@@ -57,7 +58,7 @@ public class TaskListController {
         Task task = taskService.findById(taskId);
 
         if (task == null) {
-            throw new RuntimeException("Task with id: " + taskId + " not found." );
+            throw new TaskNotFoundException("Task with id: " + taskId + " not found." );
         }
 
         taskService.deleteById(taskId);
