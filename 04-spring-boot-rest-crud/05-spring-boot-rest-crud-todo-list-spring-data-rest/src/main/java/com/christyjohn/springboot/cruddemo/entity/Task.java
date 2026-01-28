@@ -30,7 +30,7 @@ public class Task {
     private String description;
 
     @NonNull
-    @Column(name="is_completed")
+    @Column(name="completed")
     private boolean completed;
 
     @Column(name="created_at")
