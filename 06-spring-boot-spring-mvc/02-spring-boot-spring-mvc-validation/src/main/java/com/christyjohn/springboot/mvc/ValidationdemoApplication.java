@@ -1,13 +1,13 @@
-package com.christyjohn.springboot.springmvc;
+package com.christyjohn.springboot.mvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringmvcApplication {
+public class ValidationdemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringmvcApplication.class, args);
+		SpringApplication.run(ValidationdemoApplication.class, args);
 	}
 
 }

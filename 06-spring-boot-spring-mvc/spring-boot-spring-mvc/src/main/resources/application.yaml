@@ -1,7 +1,0 @@
-spring:
-  application:
-    name: springmvc
-
-countries: Brazil, France, Germany, India, Mexico, Spain, United States
-languages: Go,Java,Python,Rust,TypeScript
-systems: Linux,macOS,Microsoft Windows,Android OS,iOS
