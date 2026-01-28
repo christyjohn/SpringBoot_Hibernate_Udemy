@@ -17,5 +17,12 @@ Country: <span th:text="${student.country}" />
 <br><br>
 
 Favorite Programming Language: <span th:text="${student.favoriteLanguage}" />
+
+
+Favorite Operating Systems:
+
+<ul>
+    <li th:each="tempSystem : ${student.favoriteSystems}" th:text="${tempSystem}" />
+</ul>
 </body>
 </html>
