@@ -20,7 +20,7 @@ CREATE TABLE `task_list` (
 -- Data for table `task_list`
 --
 
-INSERT INTO `task_list` (`title`, `description`, `is_completed`) VALUES 
+INSERT INTO `task_list` (`title`, `description`, `completed`) VALUES 
     ('Do Laundry', 'Do the laundry for last week.', false),
     ('Do Grocery shopping', 'Buy vegetables and grocery for next week', true),
     ('Finish Homework', 'Do the Math homework and complete the Physics assignment', false),
