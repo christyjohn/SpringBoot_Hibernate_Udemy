@@ -1,3 +1,5 @@
 spring:
   application:
     name: springmvc
+
+countries: Brazil, France, Germany, India, Mexico, Spain, United States
