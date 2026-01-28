@@ -11,7 +11,7 @@ CREATE TABLE `task_list` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `description` TEXT,
-  `is_completed` BOOLEAN DEFAULT FALSE,
+  `completed` BOOLEAN DEFAULT FALSE,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
@@ -20,7 +20,7 @@ CREATE TABLE `task_list` (
 -- Data for table `task_list`
 --
 
-INSERT INTO `task_list` (`title`, `description`, `is_completed`) VALUES 
+INSERT INTO `task_list` (`title`, `description`, `completed`) VALUES 
     ('Do Laundry', 'Do the laundry for last week.', false),
     ('Do Grocery shopping', 'Buy vegetables and grocery for next week', true),
     ('Finish Homework', 'Do the Math homework and complete the Physics assignment', false),
