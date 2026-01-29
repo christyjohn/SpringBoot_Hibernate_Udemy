@@ -61,4 +61,14 @@ public class ProductController {
         // use a redirect to prevent duplicate submissions
         return "redirect:/products/list";
     }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") int id) {
+
+        // delete the product
+        productService.deleteById(id);
+
+        // redirect to /products/list
+        return "redirect:/products/list";
+        }
 }
