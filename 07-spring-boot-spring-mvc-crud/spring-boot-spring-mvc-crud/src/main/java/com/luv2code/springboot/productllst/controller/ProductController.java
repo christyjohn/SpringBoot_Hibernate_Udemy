@@ -4,10 +4,7 @@ import com.luv2code.springboot.productllst.entity.Product;
 import com.luv2code.springboot.productllst.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,6 +37,19 @@ public class ProductController {
 
         model.addAttribute("product", product);
 
+        return "products/product-form";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("id") int id,
+                                   Model model) {
+        // get the product from the service
+        Product product = productService.findById(id);
+
+        // set product as a model attribute to pre-populate the form
+        model.addAttribute("product", product);
+
+        // send over to our form
         return "products/product-form";
     }
 

@@ -29,6 +29,7 @@
                 <th>SKU</th>
                 <th>Product Description</th>
                 <th>Price</th>
+                <th>Action</th>
             </tr>
             </thead>
 
@@ -39,6 +40,14 @@
                 <td th:text="${product.sku}" />
                 <td th:text="${product.productDescription}" />
                 <td th:text="${product.price}" />
+
+                <!-- Add update button/link -->
+                <td>
+                    <a th:href="@{/products/showFormForUpdate(id=${product.id})}"
+                       class="btn btn-info btn-sm">
+                        Update
+                    </a>
+                </td>
 
             </tr>
             </tbody>
