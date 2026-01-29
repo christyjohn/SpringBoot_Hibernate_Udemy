@@ -1,7 +1,7 @@
-package com.luv2code.springboot.cruddemo.controller;
+package com.luv2code.springboot.productllst.controller;
 
-import com.luv2code.springboot.cruddemo.entity.Product;
-import com.luv2code.springboot.cruddemo.service.ProductService;
+import com.luv2code.springboot.productllst.entity.Product;
+import com.luv2code.springboot.productllst.service.ProductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,6 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.luv2code.springboot.productllst.service;
 
-import com.luv2code.springboot.cruddemo.entity.Product;
+import com.luv2code.springboot.productllst.entity.Product;
 
 import java.util.List;
 
