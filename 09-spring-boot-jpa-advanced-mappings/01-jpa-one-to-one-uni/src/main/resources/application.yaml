@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: cruddemo
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://localhost:3306/hb-01-one-to-one-uni
+    username: springstudent
+    password: springstudent
+
+logging:
+  level:
+    root: warn
