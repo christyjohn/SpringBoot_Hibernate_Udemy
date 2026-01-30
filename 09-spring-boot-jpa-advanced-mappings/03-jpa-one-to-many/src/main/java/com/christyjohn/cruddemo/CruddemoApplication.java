@@ -23,17 +23,28 @@ public class CruddemoApplication {
 		return runner -> {
 			//createInstructor(appDAO);
 			//findInstructor(appDAO, 1);
-			//deleteInstructor(appDAO, 1);
+			deleteInstructor(appDAO, 2);
 			//findInstructorDetail(appDAO, 2);
-			// deleteInstructorDetail(appDAO, 2);
+			//deleteInstructorDetail(appDAO, 2);
 			//createInstructorWithCourses(appDAO);
 			//findInstructorWithCourses(appDAO, 1);
 			//findCoursesForInstructor(appDAO, 1);
 			//findInstructorWithCoursesJoinFetch(appDAO, 1);
-			// updateInstructor(appDAO, 1, "TESTER");
-			updateCourse(appDAO, 10);
+			//updateInstructor(appDAO, 1, "TESTER");
+			//updateCourse(appDAO, 10);
+			// deleteCourse(appDAO, 10);
 		};
 	}
+
+	private void deleteCourse(AppDAO appDAO, int id) {
+
+		System.out.println("Deleting course id: " + id);
+
+		appDAO.deleteCourseById(id);
+
+		System.out.println("Done!");
+	}
+
 	private void updateCourse(AppDAO appDAO, int id) {
 
 		// find the course
