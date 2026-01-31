@@ -27,11 +27,15 @@ public class AopdemoApplication {
 			MembershipDAO theMembershipDAO) {
 
 		// call the business method
-		theAccountDAO.addAccount();
+		Account myAccount = new Account();
+		theAccountDAO.addAccount(myAccount, true);
+		
+		// call the business method
+		//theAccountDAO.addAccount();
 
 		// call the business method
-		Account myAccount = new Account();
-		theAccountDAO.addAccount(myAccount);
+		//Account myAccount = new Account();
+		//theAccountDAO.addAccount(myAccount);
 
 		// call the membership business method
 		theMembershipDAO.addAccount();
