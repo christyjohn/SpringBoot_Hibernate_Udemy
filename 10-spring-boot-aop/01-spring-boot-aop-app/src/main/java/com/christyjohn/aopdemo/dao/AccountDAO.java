@@ -2,6 +2,8 @@ package com.christyjohn.aopdemo.dao;
 
 import com.christyjohn.aopdemo.data.Account;
 
+import java.util.List;
+
 public interface AccountDAO {
 
     //void addAccount();
@@ -19,4 +21,7 @@ public interface AccountDAO {
     public String getServiceCode();
 
     public void setServiceCode(String serviceCode);
+
+    // add a new method: findAccounts()
+    List<Account> findAccounts();
 }
