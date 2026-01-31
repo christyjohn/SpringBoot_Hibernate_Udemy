@@ -2,6 +2,7 @@ package com.christyjohn.aopdemo;
 
 import com.christyjohn.aopdemo.dao.AccountDAO;
 import com.christyjohn.aopdemo.dao.MembershipDAO;
+import com.christyjohn.aopdemo.data.Account;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,6 +28,10 @@ public class AopdemoApplication {
 
 		// call the business method
 		theAccountDAO.addAccount();
+
+		// call the business method
+		Account myAccount = new Account();
+		theAccountDAO.addAccount(myAccount);
 
 		// call the membership business method
 		theMembershipDAO.addAccount();
