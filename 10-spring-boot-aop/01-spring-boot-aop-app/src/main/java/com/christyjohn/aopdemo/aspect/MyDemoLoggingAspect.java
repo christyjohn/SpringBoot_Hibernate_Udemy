@@ -3,6 +3,7 @@ package com.christyjohn.aopdemo.aspect;
 import com.christyjohn.aopdemo.data.Account;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -15,6 +16,20 @@ import java.util.List;
 @Component
 @Order(2)
 public class MyDemoLoggingAspect {
+
+    @AfterThrowing(
+            pointcut = "execution(* com.christyjohn.aopdemo.dao.AccountDAO.findAccounts(..))",
+            throwing = "theExc")
+    public void afterThrowingFindAccountsAdvice(
+            JoinPoint theJoinPoint, Throwable theExc) {
+
+        // print out which method we are advising on
+        String method = theJoinPoint.getSignature().toShortString();
+        System.out.println("\n=====>>> Executing @AfterThrowing on method: " + method);
+
+        // log the exception
+        System.out.println("\n=====>>> The exception is: " + theExc);
+    }
 
     @AfterReturning(
             pointcut = "execution(* com.christyjohn.aopdemo.dao.AccountDAO.findAccounts(..))",
@@ -50,7 +65,7 @@ public class MyDemoLoggingAspect {
             tempAccount.setName(theUpperName);
         }
     }
-    
+
     @Before("com.christyjohn.aopdemo.aspect.MyAopExpressions.forDaoPackageNoGetterSetter()")
     public void beforeAddAccountAdvice(JoinPoint theJoinPoint) {
         System.out.println("\n=====>>> Executing @Before advice on method");
